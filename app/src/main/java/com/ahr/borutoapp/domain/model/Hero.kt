@@ -2,8 +2,9 @@ package com.ahr.borutoapp.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.ahr.borutoapp.data.BorutoDatabase
 
-@Entity
+@Entity(tableName = BorutoDatabase.HERO_TABLE)
 data class Hero(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
