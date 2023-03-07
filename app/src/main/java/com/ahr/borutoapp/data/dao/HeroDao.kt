@@ -3,6 +3,7 @@ package com.ahr.borutoapp.data.dao
 import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.ahr.borutoapp.domain.model.Hero
 
@@ -15,7 +16,7 @@ interface HeroDao {
     @Query("SELECT * FROM hero_table WHERE id = :heroId")
     fun getSelectedHero(heroId: Int): Hero
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertHeroes(heroes: List<Hero>)
 
     @Query("DELETE FROM hero_table")
