@@ -8,10 +8,14 @@ import com.ahr.borutoapp.data.dao.HeroRemoteKeyDao
 import com.ahr.borutoapp.domain.model.Hero
 import com.ahr.borutoapp.domain.model.HeroRemoteKey
 
-@Database(entities = [Hero::class, HeroRemoteKey::class], version = 1)
+@TypeConverters(DatabaseConverter::class)
+@Database(
+    entities = [Hero::class, HeroRemoteKey::class],
+    version = 1,
+    exportSchema = false
+)
 abstract class BorutoDatabase : RoomDatabase() {
 
-    @TypeConverters(value = [DatabaseConverter::class])
     abstract fun heroDao(): HeroDao
 
     abstract fun heroRemoteKeyDao(): HeroRemoteKeyDao

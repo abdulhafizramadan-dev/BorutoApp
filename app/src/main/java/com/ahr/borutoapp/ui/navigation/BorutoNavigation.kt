@@ -6,6 +6,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.ahr.borutoapp.presentation.screen.splash.SplashScreen
 
 @Composable
 fun BorutoNavigation(
@@ -16,7 +17,7 @@ fun BorutoNavigation(
         startDestination = Screen.Splash.route
     ) {
         composable(route = Screen.Splash.route) {
-
+            SplashScreen(navController = navController)
         }
         composable(route = Screen.Welcome.route) {
 

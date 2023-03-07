@@ -6,7 +6,7 @@ class DatabaseConverter(private val separator: String = ",") {
 
     @TypeConverter
     fun convertListToString(list: List<String>): String {
-        return list.joinToString()
+        return list.joinToString(separator = separator)
     }
 
     @TypeConverter
