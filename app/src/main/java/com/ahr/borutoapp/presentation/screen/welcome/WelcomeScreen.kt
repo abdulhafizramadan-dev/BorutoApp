@@ -24,12 +24,15 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
 import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.ahr.borutoapp.navigation.Screen
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun WelcomeScreen(
     navController: NavHostController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    welcomeViewModel: WelcomeViewModel = hiltViewModel(),
 ) {
     val onBoardingScreens = listOf(
         OnBoarding.Greetings,
@@ -63,7 +66,11 @@ fun WelcomeScreen(
         )
         WelcomeScreenFinishButton(
             isVisible = finishButtonVisibility,
-            onButtonClicked = { },
+            onButtonClicked = {
+                welcomeViewModel.saveOnBoardingState(true)
+                navController.popBackStack()
+                navController.navigate(Screen.Home.route)
+            },
             modifier = Modifier.weight(1f)
         )
     }
