@@ -1,4 +1,4 @@
-package com.ahr.borutoapp.ui.navigation
+package com.ahr.borutoapp.navigation
 
 sealed class Screen(val route: String) {
     object Splash : Screen("splash_screen")
