@@ -10,4 +10,5 @@
     <string name="power">Power</string>
     <string name="power_description">Check out your hero\'s power and  see how much are they strong comparing to others.</string>
     <string name="finish">Finish</string>
+    <string name="search_hero">Search Hero</string>
 </resources>
