@@ -1,10 +1,10 @@
-package com.ahr.borutoapp.data
+package com.ahr.borutoapp.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.ahr.borutoapp.data.dao.HeroDao
-import com.ahr.borutoapp.data.dao.HeroRemoteKeyDao
+import com.ahr.borutoapp.data.local.dao.HeroDao
+import com.ahr.borutoapp.data.local.dao.HeroRemoteKeyDao
 import com.ahr.borutoapp.domain.model.Hero
 import com.ahr.borutoapp.domain.model.HeroRemoteKey
 

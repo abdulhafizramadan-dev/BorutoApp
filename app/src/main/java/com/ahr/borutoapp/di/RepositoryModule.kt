@@ -1,8 +1,8 @@
 package com.ahr.borutoapp.di
 
 import android.content.Context
-import androidx.room.Room
-import com.ahr.borutoapp.data.local.BorutoDatabase
+import com.ahr.borutoapp.data.pref.DatastoreOperationsImpl
+import com.ahr.borutoapp.presentation.repository.DatastoreOperations
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,17 +12,13 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DatabaseModule {
+object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideBorutoDatabase(
+    fun provideDatastoreOperations(
         @ApplicationContext context: Context
-    ) : BorutoDatabase {
-        return Room.databaseBuilder(
-            context = context,
-            klass = BorutoDatabase::class.java,
-            name = BorutoDatabase.DATABASE_NAME
-        ).build()
+    ): DatastoreOperations {
+        return DatastoreOperationsImpl(context)
     }
 }

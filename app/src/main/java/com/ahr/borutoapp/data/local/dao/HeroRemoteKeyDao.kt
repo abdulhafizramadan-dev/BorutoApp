@@ -1,4 +1,4 @@
-package com.ahr.borutoapp.data.dao
+package com.ahr.borutoapp.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert

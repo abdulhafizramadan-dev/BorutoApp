@@ -1,4 +1,4 @@
-package com.ahr.borutoapp.data
+package com.ahr.borutoapp.data.local
 
 import androidx.room.TypeConverter
 

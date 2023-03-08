@@ -2,7 +2,7 @@ package com.ahr.borutoapp.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.ahr.borutoapp.data.BorutoDatabase
+import com.ahr.borutoapp.data.local.BorutoDatabase
 
 @Entity(BorutoDatabase.HERO_REMOTE_KEY_TABLE)
 data class HeroRemoteKey(
