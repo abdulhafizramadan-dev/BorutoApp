@@ -1,4 +1,4 @@
-package com.ahr.borutoapp.presentation.repository
+package com.ahr.borutoapp.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 

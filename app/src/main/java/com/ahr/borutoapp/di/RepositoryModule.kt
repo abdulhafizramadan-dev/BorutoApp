@@ -6,7 +6,7 @@ import com.ahr.borutoapp.data.repository.Repository
 import com.ahr.borutoapp.domain.usecase.UseCases
 import com.ahr.borutoapp.domain.usecase.read_onboarding.ReadOnBoardingUseCase
 import com.ahr.borutoapp.domain.usecase.save_onboarding.SaveOnBoardingUseCase
-import com.ahr.borutoapp.presentation.repository.DatastoreOperations
+import com.ahr.borutoapp.domain.repository.DatastoreOperations
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
