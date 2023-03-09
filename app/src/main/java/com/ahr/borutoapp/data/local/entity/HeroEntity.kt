@@ -1,6 +1,12 @@
-package com.ahr.borutoapp.domain.model
+package com.ahr.borutoapp.data.local.entity
 
-data class Hero(
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.ahr.borutoapp.data.local.BorutoDatabase
+
+@Entity(tableName = BorutoDatabase.HERO_TABLE)
+data class HeroEntity(
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
     val name: String,
     val image: String,

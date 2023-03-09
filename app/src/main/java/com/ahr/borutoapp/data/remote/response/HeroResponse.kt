@@ -1,5 +1,6 @@
 package com.ahr.borutoapp.data.remote.response
 
+import com.ahr.borutoapp.data.local.entity.HeroEntity
 import com.google.gson.annotations.SerializedName
 
 data class HeroResponse(
@@ -23,7 +24,7 @@ data class HeroResponse(
 	val rating: Double? = null,
 
 	@field:SerializedName("id")
-	val id: Int? = null,
+	val id: Int,
 
 	@field:SerializedName("power")
 	val power: Int? = null,
@@ -37,3 +38,23 @@ data class HeroResponse(
 	@field:SerializedName("natureTypes")
 	val natureTypes: List<String> = emptyList()
 )
+
+
+fun List<HeroResponse>.toEntities(): List<HeroEntity> {
+	return map { hero -> hero.toEntity() }
+}
+fun HeroResponse.toEntity(): HeroEntity {
+	return HeroEntity(
+		id = id,
+		name = name ?: "",
+		image = image ?: "",
+		about = about ?:"",
+		rating = rating ?: 0.0,
+		power = power ?: 0,
+		month = month ?: "",
+		day = day ?: "",
+		family = family,
+		abilities = abilities,
+		natureTypes = natureTypes
+	)
+}
